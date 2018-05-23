@@ -1,0 +1,25 @@
+{
+  "name": "baunilha-modal",
+  "version": "1.0.0",
+  "description": "This is a simples modal plugin, created for expedite modal make proccess.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasRuy/baunilha-modal.git"
+  },
+  "keywords": [
+    "modal",
+    "plugin",
+    "vanilla",
+    "ES5"
+  ],
+  "author": "Lucas Ruy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucasRuy/baunilha-modal/issues"
+  },
+  "homepage": "https://github.com/LucasRuy/baunilha-modal#readme"
+}
