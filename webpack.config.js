@@ -1,10 +1,11 @@
 const path = require('path');
 
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    app: './src/app/baunilhamodal.js'
+    app: './src/app/app.js'
   },
   output: {
     filename: 'baunilhamodal.js',
@@ -25,12 +26,10 @@ module.exports = {
         test: /\.styl$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
-          {
-            loader: 'stylus-loader',
-          },
-        ],
+          'stylus-loader'
+        ]
       }
     ]
   },
@@ -38,7 +37,12 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/example/index.html",
-      filename: "./index.html"
+      filename: "./example/index.html",
+      inject: 'head'
+    }),
+    new MiniCssExtractPlugin({
+      filename: "baunilhamodal.css",
+      chunkFilename: "[id].css"
     })
   ]
 };
