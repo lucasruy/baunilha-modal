@@ -1,6 +1,6 @@
 # BaunilhaModal
 This is a simple modal plugin, createad for expedite modal make proccess.
-plugin current version is v1.0.0
+plugin current version is v1.0.2
 
 ## Get Started
 
@@ -9,7 +9,10 @@ plugin current version is v1.0.0
 Initialize the script by running:
 
 ```js
-var myModal = new BaunilhaModal();
+const myModal = new BaunilhaModal({
+    buttonTarget: '.my-button',
+    content: 'This text is inputed on my modal'
+});
 ```
 
 ### Customization
@@ -17,8 +20,11 @@ var myModal = new BaunilhaModal();
 You can pass an object as a parameter to customize
 
 ```js
-var myModal = new BaunilhaModal({
-    modalClass: 'my-modal'
+const myModal = new BaunilhaModal({
+    buttonTarget: '.my-button',
+    content: 'This text is inputed on my modal',
+    modalClass: 'custom-modal-class',
+    hasCloseButton: true
 });
 ```
 
@@ -32,11 +38,11 @@ buttonTarget | string | '.basic-modal-open' | Button selector that opens the mod
 content | string  | '' | Defines the content that will be within its modal, this item accepts the following formats: `string`,` outerHTML` and `nodeElement`.
 maxWidth | string | '500px' | Set max width of your modal.
 minWidth | string | '280px' | Set min width of your modal.
-buttonClose | boolean | true | If `true` includes a modal close button, if it is set to` false` this button will not exist..
+hasCloseButton | boolean | true | If `true` includes a modal close button, if it is set to` false` this button will not exist..
 overlay | boolean | true | Enables overlay around the modal.
 overlayClose | boolean | false | If it is `true`, when clicking on the overlay the modal is closed.
 keyboard | boolean | true | When `ESC` is pressed, the modal is closed.
-appendOn | string | null | Receives the selector (`.class`, `#id`, `TAGNAME`) of an element where you want to add the modal.
+appendTo | string | null | Receives the selector (`.class`, `#id`, `TAGNAME`) of an element where you want to add the modal.
 
 ### Methods
 
@@ -53,8 +59,15 @@ destroy() | Removes the modal with its components.
 - The plugin does not have dependencies to work, remembering that it was written to be applied in modern browser.
 
 ### Compatibility
+List of browsers where the plug-in was tested.
 
-* In progress
+Browser | Version
+------- | -------
+Chrome  | 68.0.3440.106
+Firefox | 61.0.2
+Opera   | 54.0
+Edge    | 42.17134.1.0
+IE      | Not supported*
 
 ### Contributing
 
