@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Baunilha Modal - Example 01</title>
+<link href="../baunilhamodal.css" rel="stylesheet"><script type="text/javascript" src="../baunilhamodal.js"></script></head>
+<body>
+    <main class="modal-style">
+        <h1>Baunilha Modal</h1>
+        
+        <div>
+            <h2>Example 01</h2>
+    
+            <div class="modal-content">
+                <h5>My list of modal</h5>
+                <p>nodeElement example</p>
+                <ul>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+                <small>This is example for nodeElement content of modal.</small>
+            </div>
+    
+            <button class="trigger-example-01" type="button">Open</button>
+        </div>
+        
+        <div>
+            <h2>Example 02</h2>
+            <p>outerHTML example</p>
+    
+            <button class="trigger-example-02" type="button">Open</button>
+        </div>
+        
+        <div>
+            <h2>Example 03</h2>
+            <p>text example</p>
+    
+            <button class="trigger-example-03" type="button">Open</button>
+        </div>
+    </main>
+
+    <script>
+        var modalContent = document.querySelector('.modal-content');
+
+        var modal = new BaunilhaModal({
+            buttonTarget: '.trigger-example-01',
+            content: modalContent
+        });
+
+        var modal01 = new BaunilhaModal({
+            buttonTarget: '.trigger-example-02',
+            content: '<h5>My modal text</h5><p>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Delegadis gente finis, bibendum egestas augue arcu ut est. Quem num gosta di mé, boa gentis num é.</p>'
+        });
+
+        var modal02 = new BaunilhaModal({
+            buttonTarget: '.trigger-example-03',
+            content: 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Delegadis gente finis, bibendum egestas augue arcu ut est. Quem num gosta di mé, boa gentis num é.'
+        });
+    </script>
+</body>
+</html>
