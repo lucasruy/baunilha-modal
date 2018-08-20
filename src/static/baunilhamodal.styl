@@ -1,4 +1,4 @@
-.baunilha-modal-open {
+.baunilha-modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -6,21 +6,26 @@
     display: block;
     width: 50%;
     height: 50%;
-    z-index: 9999;
+    z-index: -9999;
     background-color: white;
     padding: 20px;
-
     visibility: hidden;
     opacity: 0;
     user-select: none;
     transition: all 200ms ease;
 
     &.is-active {
+        z-index: 9999;
         visibility: visible;
         opacity: 1;
         user-select: inherit;
+        &__overlay {
+            z-index: 9998;
+            visibility: visible;
+            opacity: 1;
+            user-select: inherit;
+        }
     }
-
     &__overlay {
         position: fixed;
         top: 0px;
@@ -30,6 +35,16 @@
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 9998;
+        visibility: hidden;
+        opacity: 0;
+        user-select: none;
+        transition: all 200ms ease;
+        &.is-active {
+            z-index: 9998;
+            visibility: visible;
+            opacity: 1;
+            user-select: inherit;
+        }
     }
     &__close {
         position: absolute;
