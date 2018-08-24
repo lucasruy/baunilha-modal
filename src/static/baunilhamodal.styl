@@ -6,25 +6,20 @@
     display: block;
     width: 50%;
     height: 50%;
-    z-index: -9999;
+    z-index: 9999;
     background-color: white;
+    color: #333;
     padding: 20px;
     visibility: hidden;
     opacity: 0;
     user-select: none;
     transition: all 200ms ease;
-
+    transition-delay: 100ms;
     &.is-active {
-        z-index: 9999;
+        // z-index: 9999;
         visibility: visible;
         opacity: 1;
         user-select: inherit;
-        &__overlay {
-            z-index: 9998;
-            visibility: visible;
-            opacity: 1;
-            user-select: inherit;
-        }
     }
     &__overlay {
         position: fixed;
@@ -40,7 +35,7 @@
         user-select: none;
         transition: all 200ms ease;
         &.is-active {
-            z-index: 9998;
+            // z-index: 9998;
             visibility: visible;
             opacity: 1;
             user-select: inherit;
