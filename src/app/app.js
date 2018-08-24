@@ -1,5 +1,3 @@
-import style from '../static/baunilhamodal.styl';
-
 import constants from './constants';
 import interactions from './interactions';
 import utils from './utils';

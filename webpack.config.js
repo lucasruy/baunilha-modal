@@ -5,14 +5,28 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: {
-    app: './src/app/app.js'
+    'baunilhaModal': [
+      './src/app/app.js', 
+      './src/static/baunilhamodal.styl'
+    ],
+    'exampleCode': [
+      './src/app/example.js',
+      './src/static/examples.styl'
+    ]
   },
   output: {
-    filename: 'baunilhamodal.js',
-    path: __dirname + '/dist'
+    filename: '[name].js',
+    path: path.resolve(path.join(__dirname, "./dist/"))
   },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
       {
         test: /\.html$/,
         use: [
@@ -41,7 +55,7 @@ module.exports = {
       inject: 'head'
     }),
     new MiniCssExtractPlugin({
-      filename: "baunilhamodal.css",
+      filename: "[name].css",
       chunkFilename: "[id].css"
     })
   ]

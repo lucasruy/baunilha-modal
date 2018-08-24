@@ -1,0 +1,46 @@
+color-blue        =    #82A2FF
+color-light-blue  =    #9DC5FF
+color-dark-blue   =    #6871E6
+
+color-white       =    #F6F7FA
+color-mid-white   =    #EFF1F6
+
+body {
+    background-color: color-mid-white;
+    color: color-dark-blue;
+    font-family: sans-serif;
+}
+
+.modal-wrapper {
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+}
+
+.modal-style {
+    display: inline-block;
+    width: 30%;
+    height: 175px;
+    float: left;
+    background-color: color-white;
+    box-shadow: 0px 0px 20px 0px transparent;
+    margin: 0px 1.5%;
+    border-radius: 4px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    text-align: center;   
+    transition: all 200ms ease;
+    &:hover {
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.trigger-example {
+    font-weight: 700;
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
+    padding: 12px 15px;
+    background-color: color-blue;
+    color: color-white;    
+}
